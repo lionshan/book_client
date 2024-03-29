@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
+import { Tabs } from "ant-design-vue";
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(Tabs);
+app.mount('#app');

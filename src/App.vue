@@ -1,15 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <Home />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Home from "./pages/Home.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  components: { Home },
+};
+</script>
+
+<style lang="scss">
+body {
+  margin: 0;
+  #app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
   }
 }
-</script>
+</style>
