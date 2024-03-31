@@ -1,19 +1,22 @@
 {
   "name": "book_client",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "ant-design-vue": "^4.0.0-rc.6",
     "vue": "^3.0.4"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
-    "vite": "^2.9.18",
-    "vite-plugin-components": "^0.13.3"
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.6"
   }
 }

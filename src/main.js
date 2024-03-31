@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { Tabs } from "ant-design-vue";
+import Antd from 'ant-design-vue';
+// import 'ant-design-vue/dist/reset.css';
 
 const app = createApp(App);
-app.use(Tabs);
+app.config.productionTip = false;
+app.use(Antd);
+
+
 app.mount('#app');

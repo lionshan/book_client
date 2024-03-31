@@ -7,9 +7,11 @@
         tab-position="left"
         class="tabs_wrap"
       >
-        <a-tab-pane key="book" tab="Tab 1">Content of Tab 1</a-tab-pane>
-        <a-tab-pane key="style" tab="Tab 2">Content of Tab 2</a-tab-pane>
-        <a-tab-pane key="other" tab="Tab 3">Content of Tab 3</a-tab-pane>
+        <a-tab-pane key="book" tab="我的小说" class="book_wrap">
+          <BookList />
+        </a-tab-pane>
+        <a-tab-pane key="style" tab="角色样式">Content of Tab 2</a-tab-pane>
+        <a-tab-pane key="other" tab="导出管理">Content of Tab 3</a-tab-pane>
       </a-tabs>
     </div>
   </div>
@@ -18,7 +20,7 @@
 <script>
 export default {
   name: "Home",
-  components: { Head },
+  components: { Head, BookList },
   props: ["modelValue"],
   emits: ["update:modelValue"],
   data() {
@@ -49,6 +51,7 @@ export default {
 <script setup>
 import {} from "vue";
 import Head from "../components/Head.vue";
+import BookList from "../components/BookList.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -60,12 +63,21 @@ import Head from "../components/Head.vue";
 
   .body_wrap {
     flex: 1;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+    min-height: 0;
     .tabs_wrap {
+      display: flex;
       height: 100%;
       flex: 1;
+      min-height: 0;
+      display: flex;
+      .book_wrap {
+        flex: 1;
+        min-height: 0;
+        padding: 0;
+      }
     }
   }
 }
