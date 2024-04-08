@@ -41,7 +41,7 @@
       <a-card
         class="list_item"
         hoverable
-        style="width: 300px"
+
         v-for="item in bookList"
         :key="item.id"
       >
@@ -218,6 +218,10 @@ const showCreateModal = () => {
     .list_item {
       margin: 24px;
       height: 350px;
+      width: 400px;
+    //   :last-child {
+    //     margin-right: auto;
+    //   }
     }
   }
 }
