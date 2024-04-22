@@ -57,16 +57,10 @@ const formState = reactive<FormState>({
   remember: true,
 });
 const onFinish = (values: any) => {
-  console.log('Success:', values);
   const {password, username} = values; 
     request.post(`${API}/signIn`, { password, username}).then((res) => {
-      let response = res.data;
-      if (!response.code) {
-        setToken(response.data.token)
-        // router.push('/home')
-      } else {
-        message.error(response.msg || '异常错误')
-      }
+      setToken(res.token)
+      router.push('/home')
     }).catch(res => {
       message.error(res.msg || '异常错误')
     })
