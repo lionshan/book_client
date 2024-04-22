@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import request from '../utils/request'
 export default {
   name: "Home",
   components: { Head, BookList },
@@ -38,7 +39,14 @@ export default {
   beforeCreated() {},
   created() {},
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    request.get("/api/authInfo").then((res) => {
+      console.log(res, '用户信息')
+      // setUserID(res.data.ID)
+    }).catch(res => {
+      message.error(res.msg || '异常错误')
+    })
+  },
   beforeUnmount() {},
   unmount() {},
   beforeUpdate() {},
