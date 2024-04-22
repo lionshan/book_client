@@ -6,11 +6,15 @@
     </div>
     <div class="operation_wrap">
       <div>头像</div>
+      <div @click="logout">退出</div>
     </div>
   </div>
 </template>
 
 <script>
+import {setToken} from '../utils/storageService'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 export default {
   name: "Head",
   components: {},
@@ -32,7 +36,12 @@ export default {
   updated() {},
   deactivated() {},
   activated() {},
-  methods: {},
+  methods: {
+    logout() {
+      setToken('')
+      router.push('/login')
+    }
+  },
 };
 </script>
 <script setup>
